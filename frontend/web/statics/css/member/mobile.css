@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+@media screen and (max-width: 600px) {
+   .tuijian ul li img{
+         display:none;
+    }
+   .question-top {
+		display:none;
+   }
+}
