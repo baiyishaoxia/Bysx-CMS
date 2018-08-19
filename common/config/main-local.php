@@ -19,7 +19,7 @@ return [
                 'class' => 'Swift_SmtpTransport',
                 'host' => 'smtp.126.com',
                 'username' => 'tzf2273465837@126.com',
-                'password' => 'tzf2273465837',//如果是126邮箱，此处请填写授权码
+                'password' => 'tzf2273465837@126.com',//如果是126邮箱，此处请填写授权码
                 'port' => '25',
                 'encryption' => 'tls',
             ],
