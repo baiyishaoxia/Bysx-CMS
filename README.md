@@ -1,5 +1,6 @@
 # Bysx-CMS
-长期更新、开发、维护等工作，只为Yii2.0而生。
+Yii 是一个 高性能 的，适用于开发 WEB 2.0 应用的 PHP 框架。
+Yii 自带了 丰富的功能，包括 MVC，DAO/ActiveRecord，I18N/L10N，缓存，身份验证和基于角色的访问控制，脚手架，测试等，可显著缩短开发时间。长期更新、开发、维护等工作，只为Yii2.0而生。
 
 # Yii the directory structure
 ```
