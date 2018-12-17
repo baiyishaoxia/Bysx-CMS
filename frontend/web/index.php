@@ -15,6 +15,7 @@ $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/../config/main-local.php')
 );
 
+require(__DIR__ . '/../../common/helper.php');
 $application = new yii\web\Application($config);
 //中英文切换配置
 $application->language = isset($_COOKIE['language']) ? htmlspecialchars($_COOKIE['language']) : 'zh-CN';
