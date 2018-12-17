@@ -25,7 +25,7 @@ $this->params['breadcrumbs'][]=['label'=>$this->title];
             <p><b>相册管理列表：</b><?=Yii::$app->user->identity->username; ?></p>
                <?php foreach ($res['data'] as $key => $value):?>
                <div class="col-lg-4 label-img-size">
-                    <a href="#" class="post-label">
+                    <a href="javascript:lookImg('原图','<?=$value['picture']?>')" class="post-label" target="_blank">
                         <img src="<?=$value['picture']?>" alt="<?=$value['created_at']?>">
                     </a>
                 </div> 
@@ -37,3 +37,16 @@ $this->params['breadcrumbs'][]=['label'=>$this->title];
               <?php endif;?>
     </div>
 </div>
+<script>
+    function lookImg(name, url) {
+        layer.open({
+            type: 1,
+            title: false,
+            closeBtn: 1,
+            shadeClose: true,
+            maxmin: true,             //开启最大，最小，还原按钮，只有type为1和2时，才能设置
+            area: ['auto', 'auto'], //宽高
+            content: "<img alt=" + name + " title=" + name + " src=" + url + " />"
+        });
+    }
+</script>

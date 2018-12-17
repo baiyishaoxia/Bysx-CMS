@@ -1,9 +1,11 @@
 <?php
 namespace frontend\controllers;
 
+use common\models\UserModel;
 use Yii;
 use frontend\controllers\base\BaseController;
 use yii\data\Pagination;
+use yii\web\User;
 
 class PhotoController extends BaseController
 {
@@ -49,8 +51,8 @@ public function actions()
     public function actionSetPhoto(){
         $user_id=Yii::$app->user->identity->id;
         $data = \common\models\PhotoModel::find()->with('user')->where(['user_id'=>$user_id])->all();
-        $cookies = Yii::$app->response->cookies; 
-        $cookies->add(new \yii\web\Cookie([ 'name' => 'picture_img', 'value' => $data[0]['user'][0]['id'] ]));
+        $cookies = Yii::$app->response->cookies;
+        $cookies->add(new \yii\web\Cookie([ 'name' => 'picture_img', 'value' => $user_id ]));
         $model = new \common\models\PhotoModel();
         if ($model->load(Yii::$app->request->post())) {
            $model->user_id = $user_id;
@@ -59,7 +61,8 @@ public function actions()
            $model->save();
          return $this->redirect(['index']);
         } else {
-         return $this->render('set-photo',['model' => $model,'data'=>$data]);
+          $user = UserModel::findOne(['id'=>$user_id]);
+         return $this->render('set-photo',['model' => $model,'data'=>$data,'user'=>$user]);
         }   
     }
 

@@ -8,7 +8,7 @@ use yii\bootstrap\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\UserModel */
 
-$this->title = '上传相册：'.$data[0]['user'][0]['username'];
+$this->title = '上传相册：'.$user['username'];
 $this->params['breadcrumbs'][] = ['label' => '个人中心', 'url' => ['member/set-data','id'=> Yii::$app->user->id ]];
 $this->params['breadcrumbs'][] = ['label' => '相册管理', 'url' => ['photo/index','id'=> Yii::$app->user->id ]];
 $this->params['breadcrumbs'][] = $this->title;
